@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fwiend World News Desk</title>
+  <meta
+    name="description"
+    content="Private newsroom editor for creating and updating Fwiend World News articles."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="assets/fwiend-logo.png">
+  <script src="script.js" defer></script>
+</head>
+<body data-page="studio">
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Fwiend World News home">
+        <span class="brand-mark">
+          <img src="assets/fwiend-logo.png" alt="Fwiend World logo">
+        </span>
+        <span class="brand-text">Fwiend World News Desk</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html">View Site</a>
+        <a href="#editor">Editor</a>
+        <a class="nav-button" href="#library">Article Library</a>
+      </nav>
+    </header>
+
+    <main class="studio-main">
+      <section class="studio-hero">
+        <div>
+          <p class="eyebrow">Private newsroom</p>
+          <h1>Write, edit, and publish every article</h1>
+          <p class="hero-text">
+            Create news stories from reorderable text, image, and video sections. Unlock the desk
+            with your private newsroom key, link your site file once, then publish without picking
+            files again on supported browsers.
+          </p>
+        </div>
+
+        <div class="studio-tip">
+          <strong>Owner-only publishing</strong>
+          <p>
+            This newsroom is protected by a private key check and can write to your article data file
+            directly on supported browsers. Once linked, the site can remember that file in this
+            browser for faster publishing. True server-side security would still need a backend.
+          </p>
+        </div>
+      </section>
+
+      <section class="gate-panel" id="gate-panel">
+        <article class="gate-card">
+          <p class="eyebrow">Owner access</p>
+          <h2>Unlock the newsroom</h2>
+          <p>
+            Enter your private newsroom key to open the editor and use the publish controls. This is
+            a client-side lock for the editor page.
+          </p>
+
+          <form id="gate-form" class="stack-form">
+            <label class="field">
+              <span>Newsroom key</span>
+              <input type="password" id="gate-passcode-input" autocomplete="current-password" required>
+            </label>
+
+            <button class="button button-primary" type="submit">Unlock newsroom</button>
+          </form>
+
+          <p class="status-message" id="gate-message" aria-live="polite"></p>
+        </article>
+      </section>
+
+      <section class="dashboard hidden" id="dashboard">
+        <div class="dashboard-toolbar">
+          <div>
+            <p class="eyebrow">News desk</p>
+            <h2>Article editor</h2>
+          </div>
+
+          <div class="toolbar-actions">
+            <button class="button button-secondary" type="button" id="new-post-button">New article</button>
+            <button class="button button-secondary" type="button" id="open-site-file-button">Link posts.json</button>
+            <button class="button button-primary" type="button" id="publish-site-file-button">Publish to file</button>
+            <button class="button button-secondary" type="button" id="download-posts-button">Download backup</button>
+            <label class="button button-secondary file-button" for="import-posts-input">Import fallback</label>
+            <input class="input-file" type="file" id="import-posts-input" accept=".json,application/json">
+            <button class="button button-secondary" type="button" id="lock-newsroom-button">Lock newsroom</button>
+          </div>
+        </div>
+
+        <p class="status-message" id="file-connection-status" aria-live="polite"></p>
+        <p class="status-message" id="studio-message" aria-live="polite"></p>
+
+        <div class="editor-layout">
+          <section class="editor-panel" id="editor">
+            <form id="post-form" class="editor-form">
+              <div class="editor-header">
+                <div>
+                  <p class="eyebrow">Compose</p>
+                  <h3 id="editor-title">Create a new article</h3>
+                </div>
+
+                <div class="form-actions">
+                  <button class="button button-primary" type="submit">Save article</button>
+                  <button class="button button-secondary" type="button" id="reset-editor-button">Clear draft</button>
+                </div>
+              </div>
+
+              <div class="field-grid">
+                <label class="field">
+                  <span>Headline</span>
+                  <input type="text" id="post-title" maxlength="120" placeholder="Breaking update headline" required>
+                </label>
+
+                <label class="field">
+                  <span>Section tag</span>
+                  <input type="text" id="post-tag" maxlength="40" placeholder="Breaking, Local, World, Culture">
+                </label>
+
+                <label class="field field-wide">
+                  <span>Summary</span>
+                  <input type="text" id="post-subtitle" maxlength="180" placeholder="A short summary for the homepage">
+                </label>
+
+                <label class="field">
+                  <span>Reporter name</span>
+                  <input type="text" id="post-author" maxlength="60" placeholder="Your byline">
+                </label>
+
+                <label class="field field-wide">
+                  <span>Cover image URL</span>
+                  <input type="url" id="post-cover" placeholder="https://example.com/news-cover.jpg">
+                </label>
+              </div>
+
+              <div class="block-builder">
+                <div class="builder-header">
+                  <div>
+                    <p class="eyebrow">Article sections</p>
+                    <h3>Arrange your coverage</h3>
+                  </div>
+
+                  <div class="toolbar-actions">
+                    <button class="button button-chip" type="button" data-add-block="text">Add text</button>
+                    <button class="button button-chip" type="button" data-add-block="image">Add image</button>
+                    <button class="button button-chip" type="button" data-add-block="video">Add video</button>
+                  </div>
+                </div>
+
+                <div class="helper-note">
+                  Add text, photos, and video sections in whatever order the article needs. Save the
+                  article, then download <code>posts.json</code> when you are ready to publish.
+                </div>
+
+                <div class="block-list" id="block-list"></div>
+              </div>
+            </form>
+          </section>
+
+          <aside class="side-panel">
+            <section class="preview-panel">
+              <div class="section-heading section-heading-tight">
+                <div>
+                  <p class="eyebrow">Live preview</p>
+                  <h3>Draft article</h3>
+                </div>
+              </div>
+              <div class="draft-preview" id="draft-preview"></div>
+            </section>
+
+            <section class="settings-card publish-card">
+              <div class="section-heading section-heading-tight">
+                <div>
+                  <p class="eyebrow">Publishing steps</p>
+                  <h3>How this goes live</h3>
+                </div>
+              </div>
+
+              <div class="publish-list">
+                <p>1. Unlock the newsroom with your private key.</p>
+                <p>2. Link your site <code>posts.json</code> file once, or import a copy as fallback.</p>
+                <p>3. Save your article into the newsroom library.</p>
+                <p>4. After that, Publish can reuse the remembered file in this browser.</p>
+                <p>5. If the file link is missing, Publish will ask where to save the updated file.</p>
+                <p>6. Chromium-based browsers usually give the smoothest direct file publishing support.</p>
+              </div>
+            </section>
+
+            <section class="library-panel" id="library">
+              <div class="section-heading section-heading-tight">
+                <div>
+                  <p class="eyebrow">Article library</p>
+                  <h3>Published articles</h3>
+                </div>
+              </div>
+              <div class="library-list" id="library-list"></div>
+            </section>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Fwiend World News Desk manages article data for the public site while keeping publishing in your hands.</p>
+    </footer>
+  </div>
+
+  <noscript>
+    <div class="noscript-banner">
+      This page needs JavaScript enabled to manage article data.
+    </div>
+  </noscript>
+</body>
+</html>

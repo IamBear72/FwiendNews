@@ -1,0 +1,83 @@
+[
+  {
+    "id": "city-garden-project-expands",
+    "title": "City Garden Project Expands Across Three More Blocks",
+    "subtitle": "Volunteers and local shops are backing a bigger community growing plan after months of strong turnout.",
+    "author": "Fwiend World News",
+    "tag": "Local",
+    "coverImage": "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1200&q=80",
+    "publishedAt": "2026-04-06T09:15:00.000Z",
+    "blocks": [
+      {
+        "id": "garden-1",
+        "type": "text",
+        "content": "## Expansion approved\n\nA neighborhood garden effort is growing again after volunteers secured support for three more blocks of planting space. Organizers said the new area will include vegetables, flowers, and seating for weekend events."
+      },
+      {
+        "id": "garden-2",
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=1200&q=80",
+        "caption": "Fresh planting beds are being added before the end of spring."
+      },
+      {
+        "id": "garden-3",
+        "type": "text",
+        "content": "### What happens next\n\nOrganizers say the next stage focuses on volunteer sign-ups, tool sharing, and a public weekend opening once the first round of planting is complete."
+      }
+    ]
+  },
+  {
+    "id": "evening-market-draws-crowds",
+    "title": "Evening Market Draws Crowds With Music, Food, and Late Shopping",
+    "subtitle": "Hundreds of visitors turned out for the first late-night market of the month, with vendors reporting strong sales.",
+    "author": "Fwiend World News",
+    "tag": "Culture",
+    "coverImage": "https://images.unsplash.com/photo-1481833761820-0509d3217039?auto=format&fit=crop&w=1200&q=80",
+    "publishedAt": "2026-04-05T18:45:00.000Z",
+    "blocks": [
+      {
+        "id": "market-1",
+        "type": "text",
+        "content": "## Strong turnout after sunset\n\nThe city center stayed busy well into the evening as food stalls, handmade goods, and live performers filled the market route. Several vendors said the extra opening hours gave the event a more relaxed atmosphere."
+      },
+      {
+        "id": "market-2",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=ScMzIvxBSi4",
+        "caption": "A short look at live music and the evening crowd."
+      },
+      {
+        "id": "market-3",
+        "type": "text",
+        "content": "> The biggest difference was time. People stayed longer, talked more, and really explored the stalls.\n\nEvent staff say more late markets are planned if attendance stays high."
+      }
+    ]
+  },
+  {
+    "id": "school-tech-lab-opens",
+    "title": "School Tech Lab Opens With New Video, Audio, and Coding Spaces",
+    "subtitle": "Students now have access to a refreshed media lab designed for creative projects and digital reporting.",
+    "author": "Fwiend World News",
+    "tag": "Education",
+    "coverImage": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+    "publishedAt": "2026-04-03T14:00:00.000Z",
+    "blocks": [
+      {
+        "id": "lab-1",
+        "type": "text",
+        "content": "## New creative spaces\n\nA refurbished school tech lab has officially opened, giving students access to updated computers, a small video corner, and audio recording equipment for multimedia projects."
+      },
+      {
+        "id": "lab-2",
+        "type": "image",
+        "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+        "caption": "The upgraded room includes new equipment for digital storytelling."
+      },
+      {
+        "id": "lab-3",
+        "type": "text",
+        "content": "### Why it matters\n\nTeachers say the new space will help students create richer presentations, news updates, interviews, and project showcases across different subjects."
+      }
+    ]
+  }
+]
